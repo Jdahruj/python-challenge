@@ -1,22 +1,21 @@
 import os
-import csv
-import pandas
+import pandas as pd
 
-csvpath = os.path.join('budget_data.csv')
+df = pd.read_csv('election_data.csv')
 
-# Method 2: Improved Reading using CSV module
+print('Total Votes: ' + str(df['Voter ID'].size))
+print(df['Candidate'].value_counts())
+print('Percentage of Total Votes:')
+print(df['Candidate'].value_counts()/df["Voter ID"].size)
+print('Winner: ' + df['Candidate'].mode())
 
-with open(csvpath) as csvfile:
+file = open('output.txt', 'w+')
 
-    # CSV reader specifies delimiter and variable that holds contents
-    csvreader = csv.reader(csvfile, delimiter=',')
+file.write('Total Votes: ' + str(df['Voter ID'].size))
+file.write("\nCandidates Votes: ")
+file.write("\n" + str(df['Candidate'].value_counts()))
+file.write("\nPercentage of Votes:\n" + str(df['Candidate'].value_counts()/df["Voter ID"].size))
+file.write('\nWinner:\n' + str(df['Candidate'].mode()))
 
-    print(csvreader)
 
-    # Read the header row first (skip this step if there is now header)
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
-
-    # Read each row of data after the header
-    for row in csvreader:
-        print(row)
+file.close()
