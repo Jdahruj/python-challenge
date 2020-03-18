@@ -1,13 +1,13 @@
 import os
 import pandas as pd
 
-df = pd.read_csv('election_data.csv')
+df = pd.read_csv("election_data.csv")
 
-print('Total Votes: ' + str(df['Voter ID'].size))
+print("Total Votes: " + str(df["Voter ID"].size))
 print(df['Candidate'].value_counts())
-print('Percentage of Total Votes:')
-print(df['Candidate'].value_counts()/df["Voter ID"].size)
-print('Winner: ' + df['Candidate'].mode())
+print("Percentage of Total Votes:")
+print(df["Candidate"].value_counts()/df["Voter ID"].size)
+print("Winner: " + df["Candidate"].mode())
 
 file = open('output.txt', 'w+')
 
