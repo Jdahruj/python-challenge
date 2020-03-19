@@ -1,16 +1,17 @@
+Election Results
+-------------------------------------
 Total Votes: 3521001
 Candidates Votes: 
 Khan        2218231
 Correy       704200
 Li           492940
 O'Tooley     105630
-Name: Candidate, dtype: int64
+-------------------------------------
 Percentage of Votes:
-Khan        0.63
-Correy      0.20
-Li          0.14
-O'Tooley    0.03
-Name: Candidate, dtype: float64
-Winner:
-0    Khan
-dtype: object
+Khan        63.0%
+Correy      20.0%
+Li          14.0%
+O'Tooley     3.0%
+-------------------------------------
+Winner: Khan
+-------------------------------------
